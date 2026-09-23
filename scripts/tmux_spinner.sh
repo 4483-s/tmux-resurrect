@@ -12,8 +12,8 @@
 #   ..
 #   kill $SPINNER_PID # Stops spinner and displays 'End message!'
 
-MESSAGE="$1"
-END_MESSAGE="$2"
+MESSAGE=$1
+END_MESSAGE=$2
 SPIN='-\|/'
 
 trap "tmux display-message '$END_MESSAGE'; exit" SIGINT SIGTERM

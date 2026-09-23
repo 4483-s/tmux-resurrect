@@ -7,14 +7,14 @@
 #
 # When executed, the above will fail. This strategy handles that.
 
-ORIGINAL_COMMAND="$1"
-DIRECTORY="$2"
+ORIGINAL_COMMAND=$1
+DIRECTORY=$2
 
 mosh_command() {
-	local args="$ORIGINAL_COMMAND"
+	local args=$ORIGINAL_COMMAND
 
-	args="${args#*-#}"
-	args="${args%|*}"
+	args=${args#*-#}
+	args=${args%|*}
 
 	echo "mosh $args"
 }

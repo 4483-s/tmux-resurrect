@@ -7,8 +7,8 @@
 #
 # When executed, the above will fail. This strategy handles that.
 
-ORIGINAL_COMMAND="$1"
-DIRECTORY="$2"
+ORIGINAL_COMMAND=$1
+DIRECTORY=$2
 
 original_command_wo_junk_vars() {
 	echo "$ORIGINAL_COMMAND" |

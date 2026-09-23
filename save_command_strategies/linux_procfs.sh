@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-PANE_PID="$1"
+PANE_PID=$1
 COMMAND_PID=$(pgrep -P $PANE_PID)
 
 exit_safely_if_empty_ppid() {
-	if [ -z "$PANE_PID" ]; then
+	if [[ -z $PANE_PID ]]; then
 		exit 0
 	fi
 }
 
 full_command() {
-	[[ -z "$COMMAND_PID" ]] && exit 0
+	[[ -z $COMMAND_PID ]] && exit 0
     # See: https://unix.stackexchange.com/a/567021
     # Avoid complications with system printf by using bash subshell interpolation.
     # This will properly escape sequences and null in cmdline.

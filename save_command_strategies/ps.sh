@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-PANE_PID="$1"
+PANE_PID=$1
 
 exit_safely_if_empty_ppid() {
-	if [ -z "$PANE_PID" ]; then
+	if [[ -z $PANE_PID ]]; then
 		exit 0
 	fi
 }

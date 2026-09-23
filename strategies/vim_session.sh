@@ -6,11 +6,11 @@
 # If 'Session.vim' does not exist, it falls back to invoking the original
 # command (without the `-S` flag).
 
-ORIGINAL_COMMAND="$1"
-DIRECTORY="$2"
+ORIGINAL_COMMAND=$1
+DIRECTORY=$2
 
 vim_session_file_exists() {
-	[ -e "${DIRECTORY}/Session.vim" ]
+	[[ -e ${DIRECTORY}/Session.vim ]]
 }
 
 main() {
