@@ -101,7 +101,7 @@ first_window_num() {
 }
 
 tmux_socket() {
-	echo $TMUX | cut -d',' -f1
+	echo "${TMUX%%,*}"
 }
 
 # Tmux option stored in a global variable so that we don't have to "ask"

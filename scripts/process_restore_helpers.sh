@@ -187,7 +187,7 @@ _get_command_strategy() {
 }
 
 _just_command() {
-	echo "$1" | cut -d' ' -f1
+	echo "${1%% *}"
 }
 
 _get_strategy_file() {
